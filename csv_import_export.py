@@ -1161,12 +1161,4 @@ print("# df = pd.read_clipboard()")
 print("Reads data from clipboard")
 
 
-# List created files
-print("\n Files created during this tutorial:")
-print("=" * 80)
-tmp_files = [f for f in os.listdir('/tmp') if f.endswith(('.csv', '.tsv', '.gz', '.bz2', '.zip'))]
-for file in sorted(tmp_files)[:30]:  # Show first 30
-    size = os.path.getsize(f'/tmp/{file}')
-    print(f"  {file:<40} ({size:>8} bytes)")
-if len(tmp_files) > 30:
-    print(f"  ... and {len(tmp_files) - 30} more files")
+
