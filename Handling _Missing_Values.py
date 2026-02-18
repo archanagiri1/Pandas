@@ -349,5 +349,5 @@ print("\nDataFrame info after handling:")
 df_filled.info()
 
 print("\n" + "=" * 80)
-print("END OF MISSING VALUES TUTORIAL")
+print(" MISSING VALUES")
 print("=" * 80)
