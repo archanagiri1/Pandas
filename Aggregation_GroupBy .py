@@ -537,6 +537,3 @@ print(df.groupby('department')['salary'].mean().nlargest(2))
 print("\n5. Bottom 2 departments by average salary:")
 print(df.groupby('department')['salary'].mean().nsmallest(2))
 
-print("\n" + "=" * 80)
-print("END OF AGGREGATION AND GROUPBY TUTORIAL")
-print("=" * 80)
