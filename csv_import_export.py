@@ -9,7 +9,7 @@ from datetime import datetime, timedelta
 import os
 
 print("=" * 80)
-print("PANDAS CSV IMPORT & EXPORT - COMPLETE GUIDE")
+print("PANDAS CSV IMPORT & EXPORT ")
 print("=" * 80)
 
 # ============================================================================
