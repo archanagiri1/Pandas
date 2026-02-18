@@ -556,5 +556,5 @@ df_time['ceil_hour'] = df_time['datetime'].dt.ceil('H')
 print(df_time[['datetime', 'ceil_hour']])
 
 print("\n" + "=" * 80)
-print("END OF DATE HANDLING TUTORIAL")
+print(" DATE HANDLING ")
 print("=" * 80)
