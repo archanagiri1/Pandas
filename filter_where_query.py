@@ -589,65 +589,6 @@ result = df.query('department == "IT"')[df['city'].isin(cities_list)]
 print(f"IT employees in {cities_list}:")
 print(result[['name', 'department', 'city']])
 
-# ============================================================================
-# PRACTICAL FILTERING EXAMPLES
-# ============================================================================
-print("\n" + "=" * 80)
-print("PRACTICAL FILTERING EXAMPLES")
-print("=" * 80)
-
-print("\n--- Real-World Scenarios ---")
-
-# Example 1: Find top performers
-print("\n1. Top Performers (score > 9.0, active, experience > 5):")
-top_performers = df[
-    (df['performance_score'] > 9.0) &
-    (df['active'] == True) &
-    (df['experience_years'] > 5)
-]
-print(top_performers[['name', 'performance_score', 'experience_years']])
-
-# Example 2: Employees due for promotion
-print("\n2. Due for Promotion (experience 7-10 years, good performance):")
-promotion_candidates = df[
-    df['experience_years'].between(7, 10) &
-    (df['performance_score'] >= 8.5) &
-    (df['active'] == True)
-]
-print(promotion_candidates[['name', 'experience_years', 'performance_score']])
-
-# Example 3: Salary audit
-print("\n3. Salary Audit (below market for experience):")
-# Simple formula: should earn at least $45,000 + ($3,000 * years of experience)
-expected_salary = 45000 + (df['experience_years'] * 3000)
-underpaid = df[df['salary'] < expected_salary]
-print(underpaid[['name', 'experience_years', 'salary']].head())
-
-# Example 4: Department analysis
-print("\n4. Department Analysis - High earners by department:")
-for dept in df['department'].unique():
-    dept_high_earners = df[
-        (df['department'] == dept) &
-        (df['salary'] > df[df['department'] == dept]['salary'].median())
-    ]
-    print(f"\n{dept}: {len(dept_high_earners)} above median")
-    print(dept_high_earners[['name', 'salary']].head(3))
-
-# Example 5: Inactive employees analysis
-print("\n5. Inactive Employees - Investigation needed:")
-inactive = df[~df['active']]
-print(inactive[['name', 'department', 'join_date', 'performance_score']])
-
-# Example 6: Multi-criteria search
-print("\n6. Perfect Match Search:")
-# Looking for: 30-40 years old, IT or Finance, salary 60-80k, active
-perfect_match = df.query(
-    '30 <= age <= 40 and '
-    'department in ["IT", "Finance"] and '
-    '60000 <= salary <= 80000 and '
-    'active == True'
-)
-print(perfect_match[['name', 'age', 'department', 'salary']])
 
 
 
