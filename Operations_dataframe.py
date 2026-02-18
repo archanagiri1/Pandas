@@ -576,5 +576,5 @@ df_result = (df.copy()
 print(df_result)
 
 print("\n" + "=" * 80)
-print("END OF DATAFRAME OPERATIONS TUTORIAL")
+print(" DATAFRAME OPERATIONS")
 print("=" * 80)
